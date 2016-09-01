@@ -2,6 +2,7 @@
 	<div id="social">
 		<div>
 			<soc-header></soc-header>
+			<soc-nav :nav="nav"></soc-nav>
 		</div>
 	</div>
 </template>
@@ -12,13 +13,26 @@
 
 	//header
 	import socHeader from './header.vue'
-	//leftnav
-	import socLeftnav from './leftnav.vue'
+	//nav
+	import socNav from './nav.vue'
 
 	export default {
+		data () {
+			return {
+				nav: {
+					sidebar:false
+				}
+				
+			}
+		},
 		components: {
 			socHeader,
-			socLeftnav
+			socNav
+		},
+		events: {
+			navOpen () {
+				this.nav.sidebar=!this.nav.sidebar
+			}
 		}
 	}
 

@@ -6,22 +6,13 @@ module.exports = function(router){
             name:'index',
             component: require('./views/app.vue')
 
-        },
-        //首页
-        // '/home':{
-        //     name:'home',
-        //     //异步处理大量数据
-        //     component: function(reslove){
-        //         return require(['./views/home/index.vue'],reslove)
-        //     }
-        // }
-
+        }
     });
 
 
     //默认
     router.redirect({
-        '/':"/home"
+        '/':"/index"
     });
 
 
