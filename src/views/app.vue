@@ -12,10 +12,13 @@
 
 	//header
 	import socHeader from './header.vue'
+	//leftnav
+	import socLeftnav from './leftnav.vue'
 
 	export default {
 		components: {
-			socHeader
+			socHeader,
+			socLeftnav
 		}
 	}
 
