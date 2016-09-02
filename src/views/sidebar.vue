@@ -6,16 +6,38 @@
 				<div class="demo-drawer-home">
 					<a v-link="{name:'index'}">Social FE Mobile</a>
 				</div>
+
+				<div class="am-list" v-for="item in listData">
+					<div class="am-list-header">{{item.name}}</div>
+					<div class="am-list-body">
+
+						<div class="am-list-item am-list-item-middle" v-for="child in item.child">
+							<div class="am-list-line">
+								<div class="am-list-content">
+									<a v-link="{name:child.url}">
+										<span style="font-size: 24px; color: rgb(136, 136, 136);">{{child.name}}</span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 		<div class="am-drawer-overlay" role="presentation" tabindex="0" :style="{ opacity: style.opacityObject , visibility : style.visibilityObject}"></div>
 	</div>
 </template>
 <script>
+	//数据集
+	import listData from '../mock/views-data'
 
 	export default {
 		data () {
 			return {
+				listData:listData,
 				style:{
 					transformObject:'',
 					opacityObject:'',
@@ -32,10 +54,10 @@
 			}
 		},
 		ready () {
-          	document.addEventListener('click', this.closed)
+          	window.document.body.addEventListener('click', this.closed)
         },
         destroy () {
-          	document.removeEventListener('click', this.closed)
+          	window.removeEventListener('click', this.closed)
         },
         methods: {
         	closed (e) {

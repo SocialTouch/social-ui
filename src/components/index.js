@@ -1,6 +1,7 @@
-// basic
-
+// views
+import comAccordion from './views/accordion'
 
 export {
-	// basic
+	// views
+	comAccordion,
 }

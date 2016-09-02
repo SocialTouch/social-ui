@@ -7,8 +7,9 @@
 
 				<section v-for="child in item.child" class="am-demo-item" style="width: 250px; height: 250px; display: inline-block;">
 					<div class="am-demo-item-inner">
-						<a href="/kitchen-sink/accordion/">
-							<div class="am-demo-item-logo" style="background-image: url(&quot;https://os.alipayobjects.com/rmsportal/nREwETegxvDndJZ.png&quot;);"></div>
+						<a v-link="{name:child.url}">
+							<div class="am-demo-item-logo" 
+							:style="{ backgroundImage: 'url(' + child.imgurl + ')' }"></div>
 							<h1 class="am-demo-item-title">{{child.name}}</h1>
 							<h2 class="am-demo-item-subtitle">{{child.title}}</h2>
 						</a>

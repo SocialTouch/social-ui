@@ -6,13 +6,25 @@ module.exports = function(router){
             name:'index',
             component: require('./views/app.vue')
 
-        }
+        },
+        '/home':{
+            name:'home',
+            component: function(reslove){
+                return require(['./views/home.vue'],reslove)
+            }
+        },
+        '/accordion':{
+            name:'accordion',
+            component: function(reslove){
+                return require(['./components/views/accordion.vue'],reslove)
+            }
+        },
     });
 
 
     //默认
     router.redirect({
-        '/':"/index"
+        '/':"/home"
     });
 
 
