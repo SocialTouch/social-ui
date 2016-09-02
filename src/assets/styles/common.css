@@ -77,11 +77,11 @@
 
 @font-face {
     font-family: anticon;
-    src: url('../fonts/font_1457169990_5499172.eot');
-    src: url('../fonts/font_1457169990_5499172.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/font_1457169990_5499172.woff') format('woff'),
-    url('../fonts/font_1457169990_5499172.ttf') format('truetype'),
-    url('../fonts/font_1457169990_5499172.svg#iconfont') format('svg')
+    src: url('../fonts/ant.eot');
+    src: url('../fonts/ant.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ant.woff') format('woff'),
+    url('../fonts/ant.ttf') format('truetype'),
+    url('../fonts/ant.svg#iconfont') format('svg')
 }
 
 .anticon {

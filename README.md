@@ -1,5 +1,5 @@
 # social-ui
-> mobile.ant.design 模板 Vue 组件库
+> mobile.ant.design非官方Vue组件库
 
 ## 版本
 > 开发中...
@@ -19,5 +19,7 @@ npm run build
 ```
 
 ## 浏览器支持
-
 chrome
+
+## License
+MIT
