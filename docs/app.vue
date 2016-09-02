@@ -35,5 +35,5 @@
 	}
 
 </script>
-<style src="./assets/styles/kitchen-sink.css"></style>
+
 <style src="./assets/styles/common.css"></style>

@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import App from './app.vue'
 import router from './router/index'
 
-//import './assets/styles/kitchen-sink.css'
+import './assets/styles/kitchen-sink.css'
 import highlight from 'highlight.js'
 import marked from 'marked'
 //import { SocialInstall } from 'social-ui'
