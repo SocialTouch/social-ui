@@ -1,6 +1,8 @@
 # social-ui
+> mobile.ant.design 模板 Vue 组件库
 
-> A Vue.js project
+## 版本
+> 开发中...
 
 ## Build Setup
 
@@ -16,4 +18,6 @@ npm run build
 
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 浏览器支持
+
+chrome
