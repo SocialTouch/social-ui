@@ -4,9 +4,22 @@
   "description": "A Vue.js project",
   "author": "丁磊 <dl375074900@qq.com>",
   "private": true,
+  "keywords": [
+    "social-ui",
+    "vue",
+    "vue ui",
+    "weex",
+    "vue-components",
+    "web-components",
+    "component",
+    "components",
+    "framework",
+    "frontend"
+  ],
+  "main": "dist/components/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "build": "node build/component.js && node build/build.js",
     "test": ""
   },
   "dependencies": {
@@ -34,6 +47,11 @@
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
 
+    "highlight.js": "^9.4.0",
+    "marked": "^0.3.5",
+    "multer": "^1.2.0",
+
+    "vue-resource": "^0.7.4",
     "vue-router": "^0.7.13",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",

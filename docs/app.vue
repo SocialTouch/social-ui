@@ -8,13 +8,11 @@
 </template>
 	
 <script>
-	//socialUI 组件库
-	import '../components/index'
 
 	//header
-	import socHeader from './header.vue'
+	import socHeader from './components/header.vue'
 	//nav
-	import socNav from './nav.vue'
+	import socNav from './components/nav.vue'
 
 	export default {
 		data () {
@@ -37,6 +35,5 @@
 	}
 
 </script>
-<style src="../assets/styles/common.css">
-
-</style>
+<style src="./assets/styles/kitchen-sink.css"></style>
+<style src="./assets/styles/common.css"></style>

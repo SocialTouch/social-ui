@@ -11,11 +11,13 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 })
 
 module.exports = merge(baseWebpackConfig, {
-  module: {
-    loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
-  },
-  // eval-source-map is faster for development
   devtool: '#eval-source-map',
+  vue: {
+    loaders: utils.cssLoaders({
+      sourceMap: false
+    }),
+    postcss: [require('precss')(), require("postcss-url")()]
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env
@@ -24,10 +26,12 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.optimize.DedupePlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
+      chunks: ['app'],
       inject: true
     })
   ]

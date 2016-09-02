@@ -1,5 +1,6 @@
 var path = require('path')
 var express = require('express')
+var multer  = require('multer')
 var webpack = require('webpack')
 var config = require('../config')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -42,6 +43,24 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(context, options))
 })
 
+
+app.route('/mock/page').get(function(req, res, next){
+  var arry = [];
+  var length = req.query.pageSize || 10;
+  var number = req.query.pageIndex || 0;
+  for(var i=1; i<=length ; i++){
+    arry.push(10 *number + i);
+  }
+  res.send({data: arry, total: 9});
+})
+
+var upload = multer({ dest: 'uploads/' })
+app.post('/profile', upload.single('avatar'), function (req, res, next) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+  console.log(req.file)
+  res.send({ a: true })
+})
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 
@@ -53,7 +72,7 @@ app.use(devMiddleware)
 app.use(hotMiddleware)
 
 // serve pure static assets
-var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
+var staticPath = path.posix.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
 module.exports = app.listen(port, function (err) {

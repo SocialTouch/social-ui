@@ -18,7 +18,7 @@
 
 <script>
 	//components list
-	import socList from './list.vue'
+	import socList from '../components/list.vue'
 
 	//数据集
 	import listData from '../mock/views-data'

@@ -3,10 +3,7 @@ var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
-  var assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
-  return path.posix.join(assetsSubDirectory, _path)
+  return path.posix.join(config.build.assetsSubDirectory, _path)
 }
 
 exports.cssLoaders = function (options) {
@@ -37,8 +34,8 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(['css']),
     postcss: generateLoaders(['css']),
     less: generateLoaders(['css', 'less']),
-    sass: generateLoaders(['css', 'sass?indentedSyntax']),
-    scss: generateLoaders(['css', 'sass']),
+    sass: generateLoaders(['css', 'resolve-url','sass?indentedSyntax']),
+    scss: generateLoaders(['css', 'resolve-url','sass']),
     stylus: generateLoaders(['css', 'stylus']),
     styl: generateLoaders(['css', 'stylus'])
   }
