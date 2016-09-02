@@ -19,7 +19,7 @@
   "main": "dist/components/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "build": "node build/component.js && node build/build.js",
+    "build": "node build/build.js",
     "test": ""
   },
   "dependencies": {
