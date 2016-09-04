@@ -28,8 +28,10 @@
     "url": "https://github.com/SocialTouch/social-ui"
   },
   "dependencies": {
-    "vue-animated-list": "^1.0.2",
-    "moment": "^2.13.0"
+    "cssnano": "^3.7.4",
+    "moment": "^2.13.0",
+    "multer": "^1.2.0",
+    "vue-animated-list": "^1.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

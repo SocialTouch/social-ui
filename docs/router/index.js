@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const router = new VueRouter()
 
 router.map({
-    '/index': {
+    '/': {
         name: 'index',
         component: (resolve) => {
             require(['../views/home.vue'], resolve)
@@ -20,11 +20,6 @@ router.map({
     },
     
 })
-
-//默认List主页
-router.redirect({
-    '/':"/index"
-});
 
 router.beforeEach(function (transition) {
     //transition.to.router.app.$Loading.start()

@@ -9,9 +9,6 @@ import loadingBarInstall from './plugin/loading-bar'
 /*eslint-enable*/
     'use strict'
     function install (Vue, options = {
-        Modal: true,
-        Notification: true,
-        Preview: true,
         LoadingBar: true
     }) {
         Vue.use(require('vue-animated-list'))

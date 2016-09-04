@@ -13,7 +13,7 @@
 	import socHeader from './components/header.vue'
 	//nav
 	import socNav from './components/nav.vue'
-
+	
 	export default {
 		data () {
 			return {
@@ -26,6 +26,9 @@
 		components: {
 			socHeader,
 			socNav
+		},
+		ready () {
+			console.log(323)
 		},
 		events: {
 			navOpen () {

@@ -11,7 +11,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 })
 
 module.exports = merge(baseWebpackConfig, {
-  module: {
+  vue: {
     loaders: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap }),
     postcss: [require('precss')(), require("postcss-url")()]
   },

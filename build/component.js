@@ -14,10 +14,9 @@ const isJS = /.js$/
 const basePath = __dirname + '/../dist/components/'
 const componentsDir = __dirname + '/../src/components/'
 const vueSort = [
-    'basic',
     'views'
 ]
-//const copyDir = ['directive', 'lib', 'plugin']
+
 const copyDir = ['plugin']
 
 rm('-rf', basePath)
