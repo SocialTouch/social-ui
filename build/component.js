@@ -15,12 +15,10 @@ const basePath = __dirname + '/../dist/components/'
 const componentsDir = __dirname + '/../src/components/'
 const vueSort = [
     'basic',
-    'form',
-    'navigation',
-    'common',
-    'global'
+    'views'
 ]
-const copyDir = ['directive', 'lib', 'plugin']
+//const copyDir = ['directive', 'lib', 'plugin']
+const copyDir = ['plugin']
 
 rm('-rf', basePath)
 mkdir('-p', basePath)

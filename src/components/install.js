@@ -1,11 +1,10 @@
 import loadingBarInstall from './plugin/loading-bar'
 
-
 /*eslint-disable*/
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global.RadonUI = factory())
+    (global.SocialUI = factory())
 }(this, function () {
 /*eslint-enable*/
     'use strict'
@@ -23,20 +22,21 @@ import loadingBarInstall from './plugin/loading-bar'
             created () {
                 if (!$root) {
                     if (this === this.$root) {
-                        RadonInit(this)
+                        SocialInit(this)
                     }
                 }
             }
         })
 
-        const RadonInit = (vm) => {
+        const SocialInit = (vm) => {
             $root = vm
 
+        
             if (options.LoadingBar) {
                 loadingBarInstall(Vue, vm)
             }
 
-            
+
         }
     }
     return install

@@ -1,9 +1,12 @@
 // views
-import comAccordion from './views/accordion'
+import socAccordion from './views/accordion'
 // Install
-import comInstall from './install'
+import SocInstall from './install'
 
 export {
 	// views
-	comAccordion,
+	socAccordion,
+
+	// install
+	SocInstall
 }
