@@ -1,8 +1,6 @@
 <template>
 	<div class="am-drawer-content">
-		<router-view keep-alive>
-		
-		</router-view>
+		<router-view keep-alive></router-view>
 	</div>
 </template>
 

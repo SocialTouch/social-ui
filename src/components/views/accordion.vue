@@ -1,7 +1,7 @@
 <template>
 	
 	<div>
-		我是组件 丁磊
+		111111111
 	</div>
 
 </template>

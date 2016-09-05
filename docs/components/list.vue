@@ -25,10 +25,7 @@
 <script>
 
 	export default {
-		props:['viewsdata'],
-        methods: {
-        	
-        }
+		props:['viewsdata']
 	}
 
 </script>

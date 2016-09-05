@@ -27,9 +27,6 @@
 			socHeader,
 			socNav
 		},
-		ready () {
-			console.log(323)
-		},
 		events: {
 			navOpen () {
 				this.nav.sidebar=!this.nav.sidebar
