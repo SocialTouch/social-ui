@@ -26,7 +26,7 @@ export default (Vue, $root) => {
             this.cut = 10000 / Math.floor(time)
             this.timer = setInterval(() => {
                 this.increase(this.cut * Math.random())
-                if ($root.RADON_LOADING_BAR.percent > 95) {
+                if ($root.SOCIAL_LOADING_BAR.percent > 95) {
                     this.finish()
                 }
             }, 100)
