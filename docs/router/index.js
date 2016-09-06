@@ -15,7 +15,7 @@ router.map({
     '/accordion': {
         name: 'accordion',
         component: (resolve) => {
-            require(['../views/views/accordion.vue'], resolve)
+            require(['../views/views/accordion/accordion.vue'], resolve)
         }
     },
     
