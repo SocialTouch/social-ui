@@ -1,37 +1,19 @@
 {
   "name": "social-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A Vue.js components lib",
-  "author": "丁磊 <dl375074900@qq.com>",
-  "private": true,
-  "keywords": [
-    "social-ui",
-    "vue",
-    "vue ui",
-    "weex",
-    "vue-components",
-    "web-components",
-    "component",
-    "components",
-    "framework",
-    "frontend"
-  ],
+  "author": "Dinglei <dl375074900@qq.com>",
   "main": "dist/components/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/component.js && node build/build.js",
-    "test": ""
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SocialTouch/social-ui"
+    "start": "node app"
   },
   "dependencies": {
-    "cssnano": "^3.7.4",
-    "moment": "^2.13.0",
-    "multer": "^1.2.0",
-    "vue-animated-list": "^1.0.2"
+    "babel-runtime": "^6.0.0",
+    "marked": "^0.3.5",
+    "multer": "^1.1.0",
+    "vue": "^1.0.21"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -40,9 +22,6 @@
     "babel-plugin-transform-runtime": "^6.0.0",
     "babel-preset-es2015": "^6.0.0",
     "babel-preset-stage-2": "^6.0.0",
-    "babel-runtime": "^6.0.0",
-    "babili": "0.0.4",
-    "babili-webpack-plugin": "0.0.2",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.23.0",
     "cssnext": "^1.8.4",
@@ -62,7 +41,7 @@
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.12.0",
     "json-loader": "^0.5.4",
-    "marked": "^0.3.5",
+    "moment": "^2.13.0",
     "node-bourbon": "^4.2.8",
     "node-sass": "^3.7.0",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
@@ -74,7 +53,6 @@
     "sass-loader": "^3.2.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
-    "vue": "^1.0.26",
     "vue-animated-list": "^1.0.2",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
@@ -85,7 +63,6 @@
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
-    "webpack-merge": "^0.8.3",
-    "webpack-sources": "^0.1.2"
+    "webpack-merge": "^0.8.3"
   }
 }

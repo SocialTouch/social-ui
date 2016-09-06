@@ -11,9 +11,11 @@
 		<div class="demo-preview-item" id="accordion-demo-0" name="accordion-demo-0">
 			<div>
 				<div class="am-accordion">
-					<div class="am-accordion-item">
-						<soc-accordion></soc-accordion>
-					</div>
+					<soc-accordion
+						:show.sync="accordion.show"
+						:option="accordion.option">
+						
+					</soc-accordion>
 				</div>
 			</div>
 		</div>
@@ -33,7 +35,11 @@
 		},
 		data () {
 			return {
-				urlpath:''
+				urlpath: '',
+				accordion: {
+					show:false,
+					option:['1','2','3']
+				}
 			}
 		},
 		// route: {
