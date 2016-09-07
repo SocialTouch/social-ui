@@ -10,7 +10,7 @@
 						<a v-link="{name:child.url}">
 							<div class="am-demo-item-logo" 
 							:style="{ backgroundImage: 'url(' + child.imgurl + ')' }"></div>
-							<h1 class="am-demo-item-title">{{child.name}}</h1>
+							<h1 class="am-demo-item-title">{{child.menu}}</h1>
 							<h2 class="am-demo-item-subtitle">{{child.title}}</h2>
 						</a>
 					</div>

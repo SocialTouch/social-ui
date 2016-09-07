@@ -12,10 +12,17 @@ router.map({
             require(['../views/home.vue'], resolve)
         }
     },
-    '/accordion': {
+
+    '/accordion': {//手风琴
         name: 'accordion',
         component: (resolve) => {
-            require(['../views/views/accordion/accordion.vue'], resolve)
+            require(['../views/views/accordion.vue'], resolve)
+        }
+    },
+    '/actionsheet': {//手风琴
+        name: 'actionsheet',
+        component: (resolve) => {
+            require(['../views/views/actionsheet.vue'], resolve)
         }
     },
     

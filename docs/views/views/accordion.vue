@@ -27,13 +27,12 @@
 </template>
 
 <script>
-
 	//数据
-	import listData from './data'
+	import listData from '../../mock/accordion'
 
 	import {
 	    socAccordion,
-	} from '../../../../src/components/index'
+	} from '../../../src/components/index'
 
 	export default {
 		components: {
