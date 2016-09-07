@@ -1,9 +1,9 @@
 <template>
 	
 	<div>
-		<div data-vueroot="">
+		<div data-vueroot="{{show}}">
 
-			<soc-mask :show.sync="show"></soc-mask>
+			<soc-mask :show="show"></soc-mask>
 
 			<div role="document" class="am-action-sheet am-action-sheet-normal">
 				<div>
@@ -41,13 +41,9 @@
 				default: '我是描述'
 			},
 			show: {
-				twoWay: true,
 				type: Boolean,
 				default: false
 			}
-		},
-		created () {
-			console.log(this.show)
 		},
 		methods: {
 			onChange ( obj ) {

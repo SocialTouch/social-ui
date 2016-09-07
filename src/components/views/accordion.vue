@@ -58,10 +58,5 @@
 </script>
 
 <style>
-	/* 必需 */
-	.accordion-content-transition {
-	  -webkit-transition: all .2s ease-out;
-      transition: all .2s ease-out
-	}
-
+	
 </style>

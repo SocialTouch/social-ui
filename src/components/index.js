@@ -6,9 +6,9 @@ import socActionsheet from './views/actionsheet'
 import socLoadingbar from './global/loadingbar'
 import socMask from './global/mask'
 
-
 // Install
 import SocInstall from './install'
+
 export {
 	// views
 	socAccordion,
