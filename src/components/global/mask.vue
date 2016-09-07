@@ -1,15 +1,16 @@
 <template>
 	
-	<div class="am-action-sheet-mask" v-show="active"></div>
+	<div class="am-action-sheet-mask" v-show="show"></div>
 
 </template>
 
 <script>
 	export default {
 		props: {
-			active: {
+			show: {
 				twoWay: true,
-				type: Boolean
+				type: Boolean,
+				default: false
 			}
 		}
 	}

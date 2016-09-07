@@ -13,7 +13,7 @@
 			<div>
 				<soc-accordion 
 					v-for="li in item.child" 
-					:active.sync="li.active"
+					:show.sync="li.show"
 					:header="li.header"
 					:option="li.child"
 					:activekey="li.activeKey"

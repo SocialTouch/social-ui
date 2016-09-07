@@ -1,13 +1,13 @@
 <template>
 
 	<div class="am-accordion">
-		<div class="am-accordion-item" :class="active?'am-accordion-item-active':''">
-			<div class="am-accordion-header" @click="opend" :aria-expanded="active?'true':'false'">
+		<div class="am-accordion-item" :class="show?'am-accordion-item-active':''">
+			<div class="am-accordion-header" @click="opend" :aria-expanded="show?'true':'false'">
 				<i class="arrow"></i>
 				{{header}}
 			</div>
 			<div class="am-accordion-content" 
-				:class="active?'am-accordion-content-active':'am-accordion-content-inactive'"
+				:class="show?'am-accordion-content-active':'am-accordion-content-inactive'"
 				>
 				<div class="am-accordion-content-box">
 					<div class="am-list-item am-list-item-middle" 
@@ -28,7 +28,7 @@
 	
 	export default {
 		props: {
-			active: {
+			show: {
 				twoWay: true,
 				type: Boolean,
 	  			default: false
@@ -47,7 +47,7 @@
 		},
 		methods: {
 			opend () {
-				this.active=!this.active
+				this.show=!this.show
 			},
 			changed (item) {
 				this.$emit('onchange', item)

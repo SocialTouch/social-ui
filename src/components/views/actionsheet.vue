@@ -2,7 +2,9 @@
 	
 	<div>
 		<div data-vueroot="">
-			<soc-mask></soc-mask>
+
+			<soc-mask :show.sync="show"></soc-mask>
+
 			<div role="document" class="am-action-sheet am-action-sheet-normal">
 				<div>
 					<div class="am-action-sheet-message">{{title}}</div>
@@ -27,7 +29,7 @@
 
 	import {
 	    socMask,
-	} from '../../../src/components/index'
+	} from '../index'
 
 	export default {
 		components: {
@@ -36,8 +38,16 @@
 		props: {
 			title: {
 				type: String,
-				default: '我是描述我是描述'
+				default: '我是描述'
+			},
+			show: {
+				twoWay: true,
+				type: Boolean,
+				default: false
 			}
+		},
+		created () {
+			console.log(this.show)
 		},
 		methods: {
 			onChange ( obj ) {

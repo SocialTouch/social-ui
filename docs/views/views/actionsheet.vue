@@ -17,7 +17,10 @@
 	</div>
 
 	<soc-actionsheet 
-		:title="actionsheet.title"></soc-actionsheet>
+		:title="actionsheet.title"
+		:show.sync="actionsheet.show">
+			
+	</soc-actionsheet>
 
 </template>
 
@@ -36,6 +39,7 @@
 				list: ['默认状态操作列表','带分享功能的操作列表','带多行按钮的分享功能操作列表'],
 				actionsheet: {
 					title: '1111',
+					show: false
 				}
 			}
 		},

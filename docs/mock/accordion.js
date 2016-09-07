@@ -4,7 +4,7 @@ module.exports = [
 		child:[
 			{
 				header:'标题文字',
-				active:false,
+				show:false,
 				activeKey:'1',
 				child:[
 					{name:'子内容子内容1'},
@@ -15,7 +15,7 @@ module.exports = [
 			},
 			{
 				header:'标题文字',
-				active:false,
+				show:true,
 				activeKey:'3',
 				child:[
 					{name:'this is panel content0 or other'},
@@ -28,7 +28,7 @@ module.exports = [
 			},
 			{
 				header:'标题文字',
-				active:false,
+				show:false,
 				activeKey:'0',
 				child:[
 					{name:'文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容'}
@@ -41,14 +41,14 @@ module.exports = [
 		child:[
 			{
 				header:'标题文字',
-				active:true,
+				show:true,
 				child:[
 					{name:'this is panel content2 or other'}
 				]
 			},
 			{
 				header:'标题文字',
-				active:true,
+				show:true,
 				child:[
 					{name:'文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容文本内容'}
 				]
