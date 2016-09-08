@@ -6,9 +6,8 @@
 				<i class="arrow"></i>
 				{{header}}
 			</div>
-			<div class="am-accordion-content" 
-				:class="show?'am-accordion-content-active':'am-accordion-content-inactive'"
-				>
+			<div class="am-accordion-content am-accordion-anim am-accordion-anim-active" 
+				transition="accordion" v-show="show">
 				<div class="am-accordion-content-box">
 					<div class="am-list-item am-list-item-middle" 
 						 v-for="item in option" 
@@ -45,6 +44,23 @@
 	      		type: Array
 		    },
 		},
+		transitions: {
+		    'accordion': {
+		   		css: false, 	
+	            enter (el) {
+			    	let h = el.offsetHeight
+	            	if(this.show){
+	            		h = el.offsetHeight
+	            		el.style.height = 0
+	            	}else{
+	            		el.style.height = el.offsetHeight + "px"
+	            	}
+			    },
+			    leave (el) {
+			    	el.style.height = 0 + 'px'
+			    }
+		    }		    
+	    },
 		methods: {
 			opend () {
 				this.show=!this.show
@@ -58,5 +74,7 @@
 </script>
 
 <style>
-	
+	.accordion-transition {
+		display: block;
+	}	
 </style>
