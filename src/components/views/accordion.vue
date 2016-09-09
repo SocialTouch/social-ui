@@ -6,7 +6,7 @@
 				<i class="arrow"></i>
 				{{header}}
 			</div>
-			<div class="am-accordion-content am-accordion-anim am-accordion-anim-active" 
+			<div class="am-accordion-content" 
 				transition="accordion" v-show="show">
 				<div class="am-accordion-content-box">
 					<div class="am-list-item am-list-item-middle" 
@@ -46,19 +46,21 @@
 		},
 		transitions: {
 		    'accordion': {
-		   		css: false, 	
-	            enter (el) {
-			    	let h = el.offsetHeight
-	            	if(this.show){
-	            		h = el.offsetHeight
-	            		el.style.height = 0
-	            	}else{
-	            		el.style.height = el.offsetHeight + "px"
-	            	}
-			    },
-			    leave (el) {
-			    	el.style.height = 0 + 'px'
-			    }
+				enter (el) {
+					el.style.height = 'auto'
+					var endHeight = getComputedStyle(el).height
+					el.style.height = '1px'
+					el.offsetHeight 
+					el.style.height = endHeight;
+				},
+				afterEnter (el) {
+					el.style.height = 'auto'
+				},
+				beforeLeave (el) {
+					el.style.height = getComputedStyle(el).height
+					el.offsetHeight 
+					el.style.height = '0px'
+				}
 		    }		    
 	    },
 		methods: {
@@ -76,5 +78,7 @@
 <style>
 	.accordion-transition {
 		display: block;
+		transition: all .3s ease;
+  		overflow: hidden
 	}	
 </style>
