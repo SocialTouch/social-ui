@@ -8,7 +8,7 @@
 			<div class="demoTitle">基本</div>
 			<div style="margin: 0px 15px;">
 				<div style="margin: 15px 0px;" v-for="item in list">
-					<button type="button" class="am-button am-button-ghost">
+					<button type="button" class="am-button am-button-ghost" @click="opend(item)">
 						<span>{{item}}</span>
 					</button>
 				</div>
@@ -19,7 +19,6 @@
 	<soc-actionsheet 
 		:title="actionsheet.title"
 		:show="actionsheet.show">
-			
 	</soc-actionsheet>
 
 </template>
@@ -39,13 +38,13 @@
 				list: ['默认状态操作列表','带分享功能的操作列表','带多行按钮的分享功能操作列表'],
 				actionsheet: {
 					title: '1111',
-					show: true
+					show: false
 				}
 			}
 		},
 		methods: {
-			onChange ( obj ) {
-
+			opend ( obj ) {
+				this.actionsheet.show = true
 			}
 		}
 	}
