@@ -7,12 +7,14 @@
 
 			<div class="am-action-sheet-wrap" v-el:socwrap>
 
-				<div class="am-action-sheet am-action-sheet-normal">
+				<div class="am-action-sheet am-action-sheet-normal" v-show="show" transition="actionsheet">
 					<div>
 						<h3 class="am-action-sheet-title" v-if="title!=''">{{title}}</h3>
 						<div class="am-action-sheet-message">{{message}}</div>
 
-						<ul class="am-action-sheet-button-list" v-if="type=='default'">
+						<ul class="am-action-sheet-button-list" 
+							v-if="type=='default'">
+
 							<li class="am-action-sheet-button-list-item">操作 0</li>
 							<li class="am-action-sheet-destructive-button">删除</li>
 							<li class="am-action-sheet-cancel-button">
@@ -100,10 +102,10 @@
 			}
 		},
 		ready () {
-	      document.addEventListener('click', this.maskClose)
+	      window.document.body.addEventListener('click', this.maskClose)
 	    },
 	    destroy () {
-	      document.removeEventListener('click', this.maskClose)
+	      window.removeEventListener('click', this.maskClose)
 	    },
 	    watch: {
 	    	'show' (val,oldval) {
@@ -114,13 +116,40 @@
 	    		}
 	    	}
 	    },
+	    transitions: {
+		    'actionsheet': {
+				enter (el) {
+					el.style.height = 'auto'
+					var endHeight = getComputedStyle(el).height
+					el.style.height = '1px'
+					el.offsetHeight 
+					el.style.height = endHeight;
+				},
+				afterEnter (el) {
+					el.style.height = 'auto'
+				},
+				beforeLeave (el) {
+					el.style.height = getComputedStyle(el).height
+					el.offsetHeight 
+					el.style.height = '0px'
+				}
+		    }		    
+	    },
 		methods: {
 			onChange ( obj ) {
 				console.log(obj)
 			},
 			maskClose (e) {
-				( e.target == this.$els.socwrap)?this.show = false:this.show = true
+				( e.target == this.$els.socwrap )?this.show = false:''
 			}
 		}
 	}
 </script>
+
+<style>
+	.actionsheet-transition {
+		display: block;
+		transition: all .3s ease;
+  		overflow: hidden
+	}	
+</style>

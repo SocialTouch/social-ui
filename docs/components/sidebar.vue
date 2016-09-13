@@ -14,7 +14,7 @@
 						<div class="am-list-item am-list-item-middle" v-for="child in item.child">
 							<div class="am-list-line">
 								<div class="am-list-content">
-									<a v-link="{name:child.url}">
+									<a v-link="{name:child.url}" @click.stop>
 										<span style="font-size: 24px; color: rgb(136, 136, 136);">{{child.name}}</span>
 									</a>
 								</div>
@@ -27,7 +27,7 @@
 
 			</div>
 		</div>
-		<div class="am-drawer-overlay" role="presentation" tabindex="0" :style="{ opacity: style.opacityObject , visibility : style.visibilityObject}"></div>
+		<div class="am-drawer-overlay" v-el:overlay :style="{ opacity: style.opacityObject , visibility : style.visibilityObject}"></div>
 	</div>
 </template>
 <script>
@@ -54,14 +54,14 @@
 			}
 		},
 		ready () {
-          	window.document.body.addEventListener('click', this.closed)
+          	(this.$els.overlay).addEventListener('click' , this.closed )
         },
         destroy () {
-          	window.removeEventListener('click', this.closed)
+          	(this.$els.overlay).removeEventListener('click' , this.closed )
         },
         methods: {
         	closed (e) {
-        		this.sidebar=false
+        		this.sidebar = false
         	}
         }
 	}

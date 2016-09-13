@@ -21,7 +21,7 @@
 		:type="actionsheet.type"
 		:title="actionsheet.title"
 		:message="actionsheet.message"
-		:show="actionsheet.show">
+		:show.sync="actionsheet.show">
 	</soc-actionsheet>
 
 </template>
@@ -63,7 +63,9 @@
 		},
 		methods: {
 			opend ( obj ) {
+				console.log(obj)
 				this.actionsheet = obj
+				this.actionsheet.show = true
 			}
 		}
 	}
