@@ -1,25 +1,31 @@
 <template>
 	
-	<div v-show="show">
-		<div data-vueroot="{{show}}">
+	<div>
+		<div v-if="show" data-vueroot="{{show}}">
 
 			<soc-mask :show.sync="show"></soc-mask>
 
-			<div tabindex="-1" class="am-action-sheet-wrap" role="dialog">
+			<div class="am-action-sheet-wrap" v-el:socwrap>
 
-				<div role="document" class="am-action-sheet am-action-sheet-normal">
+				<div class="am-action-sheet am-action-sheet-normal">
 					<div>
-						<div class="am-action-sheet-message">{{title}}</div>
+						<h3 class="am-action-sheet-title" v-if="title!=''">{{title}}</h3>
+						<div class="am-action-sheet-message">{{message}}</div>
+
 						<ul class="am-action-sheet-button-list">
 							<li class="am-action-sheet-button-list-item">操作 0</li>
-							<li class="am-action-sheet-destructive-button">
-								<!-- react-text: 16 -->删除<!-- /react-text -->	
-							</li>
+							<li class="am-action-sheet-destructive-button">删除</li>
 							<li class="am-action-sheet-cancel-button">
-								<!-- react-text: 18 -->取消<!-- /react-text -->
+								取消
 								<span class="am-action-sheet-cancel-button-mask"></span>
 							</li>
 						</ul>
+
+						<div class="am-action-sheet-share">
+							
+							<div class="am-action-sheet-share-cancel-button">取消</div>
+						</div>
+						
 					</div>
 				</div>
 
@@ -41,6 +47,10 @@
 		props: {
 			title: {
 				type: String,
+				default: ''
+			},
+			message: {
+				type: String,
 				default: '我是描述'
 			},
 			show: {
@@ -48,9 +58,27 @@
 				default: false
 			}
 		},
+		ready () {
+	      document.addEventListener('click', this.maskClose)
+	    },
+	    destroy () {
+	      document.removeEventListener('click', this.maskClose)
+	    },
+	    watch: {
+	    	'show' (val,oldval) {
+	    		if ( val ) {
+	    			document.body.style.overflow = 'hidden'
+	    		} else {
+	    			document.body.style.overflow = ''
+	    		}
+	    	}
+	    },
 		methods: {
 			onChange ( obj ) {
 				console.log(obj)
+			},
+			maskClose (e) {
+				( e.target == this.$els.socwrap)?this.show = false:this.show = true
 			}
 		}
 	}

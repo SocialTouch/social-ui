@@ -17,7 +17,7 @@
 	</div>
 
 	<soc-actionsheet 
-		:title="actionsheet.title"
+		:message="actionsheet.title"
 		:show="actionsheet.show">
 	</soc-actionsheet>
 
@@ -37,7 +37,7 @@
 			return {
 				list: ['默认状态操作列表','带分享功能的操作列表','带多行按钮的分享功能操作列表'],
 				actionsheet: {
-					title: '1111',
+					message: '1111',
 					show: false
 				}
 			}
